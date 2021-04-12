@@ -1,0 +1,34 @@
+version: "3.7"
+
+services:
+  producer:
+    build: ./message-producer
+    image: bruce/message-producer:v0.0.1
+    container_name: message-producer
+    ports:
+      - "8000:8000"
+    networks:
+      - back-tier
+    hostname: message-producer
+
+  consumer:
+    build: ./message-consumer
+    image: bruce/message-consumer:v0.0.1
+    container_name: message-consumer
+    ports:
+      - "8001:8001"
+    networks:
+      - back-tier
+    hostname: message-consumer
+
+  rabbitmq:
+    image: rabbitmq:3.8.14-management
+    hostname: rabbit
+    ports:
+      - 5672:5672
+      - 15672:15672
+    networks:
+      - back-tier
+
+networks:
+  back-tier:
