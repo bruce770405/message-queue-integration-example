@@ -2,5 +2,7 @@ package com.bruce.message.consumer.mq
 
 import java.io.Serializable
 
-data class MessageModel<T>(val id: String, val data: T) : Serializable {
+class MessageModel<T> : Serializable {
+    val id: String? = null
+    val data: T? = null
 }

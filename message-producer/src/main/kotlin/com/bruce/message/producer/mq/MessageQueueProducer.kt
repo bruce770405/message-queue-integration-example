@@ -30,7 +30,7 @@ class MessageQueueProducer constructor(private val rabbit: RabbitTemplate) {
      * @param message push data.
      */
     fun sendMessage(message: MessageModel<MessagePushBo>) {
-        val correlationData = CorrelationData(message.id)
+        val correlationData = CorrelationData(message.id.orEmpty())
         rabbit.convertAndSend(MessageQueueConfig.MY_TEST_PRODUCER_EXCHANGE_NAME, MessageQueueConfig.MY_TEST_PRODUCER_ROUTING_KEY, message, messagePostProcessor(), correlationData)
     }
 

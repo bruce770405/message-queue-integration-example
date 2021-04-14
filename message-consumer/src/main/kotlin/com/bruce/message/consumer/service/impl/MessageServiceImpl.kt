@@ -27,8 +27,8 @@ class MessageServiceImpl(private val messagePushLogRepository: MessagePushLogRep
         logger.info("do handle something... ${messagePushBo.id} , title : ${messagePushBo.title} , content : ${messagePushBo.content}")
 
         val messagePushLogEntity = MessagePushLogEntity()
-        messagePushLogEntity.title = messagePushBo.title
-        messagePushLogEntity.content = messagePushBo.content
+        messagePushLogEntity.title = messagePushBo.title.orEmpty()
+        messagePushLogEntity.content = messagePushBo.content.orEmpty()
         messagePushLogEntity.addedAt = LocalDateTime.now()
         messagePushLogEntity.updateAt = LocalDateTime.now()
         messagePushLogRepository.save(messagePushLogEntity)

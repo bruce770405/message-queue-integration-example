@@ -2,4 +2,8 @@ package com.bruce.message.consumer.models.bo
 
 import java.io.Serializable
 
-data class MessagePushBo(val id: String, val title: String, val content: String) : Serializable
+class MessagePushBo : Serializable {
+    val id: String? = null
+    val title: String? = null
+    val content: String? = null
+}

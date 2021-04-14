@@ -15,6 +15,6 @@ class MessageController(val messageService: MessageService) {
     fun pushSomeMessage(@RequestBody rq: MessagePushRequest): ResponseEntity<Void> {
         val messageId: String = UUID.randomUUID().toString()
         messageService.pushAndHandleMessage(MessagePushBo(messageId, rq.title, rq.content))
-        return ResponseEntity.noContent().build<Void>()
+        return ResponseEntity.noContent().build()
     }
 }
