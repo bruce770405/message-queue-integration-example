@@ -1,4 +1,4 @@
-# message_queue_integration_example
+# message queue integration example
 
 ## Technology
 * Kotlin
