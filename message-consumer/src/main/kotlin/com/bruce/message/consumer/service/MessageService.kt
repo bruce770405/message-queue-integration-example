@@ -7,7 +7,7 @@ import org.springframework.data.domain.Pageable
 
 interface MessageService {
 
-    fun doDandleMessage(messagePushBo: MessagePushBo)
+    fun doHandleMessage(messagePushBo: MessagePushBo)
 
     fun getMessagePushHandleLog(startTime: Long, endTime: Long, pageable: Pageable): MessagePushLogResponse<MessagePushLogBo>
 

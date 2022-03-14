@@ -14,7 +14,7 @@ class MessageQueueConfig {
 
     @Bean
     fun queue(): Queue {
-        return Queue(MY_TEST_CONSUMER_QUEUE_NAME)
+        return Queue(MY_TEST_CONSUMER_QUEUE_NAME, true, false, false)
     }
 
     @Bean

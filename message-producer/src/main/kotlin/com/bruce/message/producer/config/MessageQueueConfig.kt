@@ -20,12 +20,12 @@ class MessageQueueConfig() {
 
     @Bean
     fun queue(): Queue {
-        return Queue(MY_TEST_PRODUCER_QUEUE_NAME)
+        return Queue(MY_TEST_PRODUCER_QUEUE_NAME, true, false, false)
     }
 
     @Bean
     fun exchange(): TopicExchange? {
-        return TopicExchange(MY_TEST_PRODUCER_EXCHANGE_NAME)
+        return TopicExchange(MY_TEST_PRODUCER_EXCHANGE_NAME, true, false)
     }
 
     @Bean
